@@ -18,4 +18,5 @@ doc
 *.mapgr
 *.path
 *.tgz
+/path
 /.metadata/
