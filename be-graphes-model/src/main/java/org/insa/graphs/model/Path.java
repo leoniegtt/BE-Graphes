@@ -209,12 +209,14 @@ public class Path {
      * Compute the length of this path (in meters).
      * 
      * @return Total length of the path (in meters).
-     * 
-     * @deprecated Need to be implemented.
      */
     public float getLength() {
-        // TODO:
-        return 0;
+    	float Length = 0 ;
+    	//parcourir la liste d'arcs et faire la somme de tous
+    	for(Arc courant : arcs) {
+    		Length = Length + courant.getLength();
+    	}
+        return Length;
     }
 
     /**
@@ -225,11 +227,9 @@ public class Path {
      * @return Time (in seconds) required to travel this path at the given speed (in
      *         kilometers-per-hour).
      * 
-     * @deprecated Need to be implemented.
      */
     public double getTravelTime(double speed) {
-        // TODO:
-        return 0;
+    	return getLength() * 3600.0 / (speed * 1000.0);
     }
 
     /**
@@ -238,11 +238,13 @@ public class Path {
      * 
      * @return Minimum travel time to travel this path (in seconds).
      * 
-     * @deprecated Need to be implemented.
      */
     public double getMinimumTravelTime() {
-        // TODO:
-        return 0;
+    	float MinTime = 0 ;
+    	for (Arc courant : arcs) {
+    		MinTime = Mintime + courant.getTravelTime();
+    	}
+    	return MinTime;
     }
 
 }
