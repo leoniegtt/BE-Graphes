@@ -198,11 +198,30 @@ public class Path {
      * 
      * @return true if the path is valid, false otherwise.
      * 
-     * @deprecated Need to be implemented.
      */
     public boolean isValid() {
-        // TODO:
-        return false;
+    	boolean result = false;
+    	boolean origin = true; 
+        if (isEmpty()) {
+        	result = true;
+        }
+        else if (size() == 1 && arcs.size() == 0) {
+        	result = true;
+        }
+        else if (arcs.get(0).getOrigin() == getOrigin() ){
+        	for(Arc courant : arcs) {
+        		if (!courant.getDestination().getSuccessors().contains(courant.getDestination())) {
+        			result = false;
+        			break;}
+        		else {
+        			origin = true;
+        		}
+        	}
+        }
+        else {
+        	result = false;
+        }
+        return result;
     }
 
     /**
@@ -239,10 +258,10 @@ public class Path {
      * @return Minimum travel time to travel this path (in seconds).
      * 
      */
-    public double getMinimumTravelTime() {
-    	float MinTime = 0 ;
+    public double getMinimumTravelTime(){
+    	double MinTime = 0 ;
     	for (Arc courant : arcs) {
-    		MinTime = Mintime + courant.getTravelTime();
+    		MinTime = MinTime + courant.getMinimumTravelTime();
     	}
     	return MinTime;
     }
