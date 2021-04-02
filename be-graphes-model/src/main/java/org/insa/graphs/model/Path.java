@@ -210,9 +210,11 @@ public class Path {
         }
         else if (arcs.get(0).getOrigin() == getOrigin() ){
         	for(Arc courant : arcs) {
-        		if (!courant.getDestination().getSuccessors().contains(courant.getDestination())) {
+        		/**if (courant.getDestination() == courant.getDestination().getSuccessors().getOrigin() ) { **/
+        		if (courant.getDestination().getSuccessors().contains(courant.getDestination())) {
         			result = false;
-        			break;}
+        			break;
+        		}
         		else {
         			origin = true;
         		}
