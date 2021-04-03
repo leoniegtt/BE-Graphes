@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-04-03T19:38:42.373Z" agent="5.0 (X11)" etag="gUdAxEZ4jZ7jcz8zhDGn" version="14.5.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-03T19:39:18.345Z" agent="5.0 (X11)" etag="WYl0i9YHCq23i_jcRmMH" version="14.5.6" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1590" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
       <root>
@@ -17,7 +17,7 @@
           <mxGeometry x="410" y="790" width="290" height="220" as="geometry" />
         </mxCell>
         <mxCell id="EZNr9idk4kIAUqU_iQ0u-11" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Arc&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getDestination() : abstract Node&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getLength() : abstract float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getMinimumTravelTime() : double&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getOrigin() : abstract Node&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getPoints() : abstract java.util.List&amp;lt;Point&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getRoadInformation() : abstract RoadInformation&lt;/p&gt;getTravelTime (double speed) : double" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="80" y="470" width="270" height="210" as="geometry" />
+          <mxGeometry x="80" y="470" width="270" height="180" as="geometry" />
         </mxCell>
         <mxCell id="EZNr9idk4kIAUqU_iQ0u-13" value="&lt;div&gt;2&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="640" y="500" width="40" height="20" as="geometry" />
@@ -43,7 +43,7 @@
             <mxPoint x="670" y="530" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="EZNr9idk4kIAUqU_iQ0u-21" value="" style="endArrow=none;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=1.011;exitY=0.662;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="EZNr9idk4kIAUqU_iQ0u-11" target="EZNr9idk4kIAUqU_iQ0u-19">
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-21" value="" style="endArrow=none;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=0.837;exitY=1.006;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="EZNr9idk4kIAUqU_iQ0u-11" target="EZNr9idk4kIAUqU_iQ0u-19">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="350" y="610.08" as="sourcePoint" />
             <mxPoint x="680" y="610.0000000000001" as="targetPoint" />
