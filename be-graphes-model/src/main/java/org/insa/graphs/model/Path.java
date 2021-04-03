@@ -201,7 +201,6 @@ public class Path {
      */
     public boolean isValid() {
     	boolean result = false;
-    	boolean origin = true; 
         if (isEmpty()) {
         	result = true;
         }
@@ -209,14 +208,13 @@ public class Path {
         	result = true;
         }
         else if (arcs.get(0).getOrigin() == getOrigin() ){
-        	for(Arc courant : arcs) {
-        		/**if (courant.getDestination() == courant.getDestination().getSuccessors().getOrigin() ) { **/
-        		if (courant.getDestination().getSuccessors().contains(courant.getDestination())) {
-        			result = false;
-        			break;
+        	for(int i = 0; i < arcs.size()-1; i++) {
+        		if (arcs.get(i).getDestination() == arcs.get(i+1).getOrigin()){
+        			result = true;
         		}
         		else {
-        			origin = true;
+        			result = false;
+        			break;
         		}
         	}
         }
