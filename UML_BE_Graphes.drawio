@@ -1,0 +1,90 @@
+<mxfile host="app.diagrams.net" modified="2021-04-03T19:45:10.780Z" agent="5.0 (X11)" etag="iJkxXLqCA39AwtGA-ZH4" version="14.5.6" type="github">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1590" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-0" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;Path&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;graph : Graph&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;arcs : java.util.List&amp;lt;Arc&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;node : Node&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;Concatenate(paths) : static Path&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;createFastestPathFromNodes (graph, nodes) : static Path&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;createShortestPathFromNodes (graph, nodes) : static Path&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getArcs() : java.util.List&amp;lt;Arc&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getDestination() : node&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getGraph() : graph&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getLength() : float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getMinimumTravelTime() : double&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getOrigin() : node&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getTravelTime(double speed) : double&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;isEmpty() : boolean&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;isValid() : boolean&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;size() : int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="50" width="320" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-1" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;Node&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;id : int&lt;/div&gt;&lt;div&gt;point : Point&lt;br&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;compareTo(node other) : int&lt;/div&gt;&lt;div&gt;equals(java.lang.Object other) : boolean&lt;/div&gt;&lt;div&gt;getId() : int&lt;/div&gt;&lt;div&gt;getNumberOfSuccessors() : int&lt;/div&gt;&lt;div&gt;getPoint() : Point&lt;/div&gt;&lt;div&gt;getSuccessors() : java.util.List&amp;lt;Arc&amp;gt;&lt;/div&gt;&lt;div&gt;hasSuccessors() : boolean&lt;/div&gt;&lt;div&gt;linkNodes(Node origin, node destination, float length, &lt;br&gt;&lt;/div&gt;&lt;div&gt;RoadInformation roadInformation, &lt;br&gt;&lt;/div&gt;&lt;div&gt;java.util.ArrayList&amp;lt;Point&amp;gt; points) : static Arc&lt;br&gt;&lt;/div&gt;&lt;font face=&quot;Helvetica&quot;&gt;&lt;code&gt;&lt;/code&gt;&lt;/font&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="680" y="450" width="290" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-4" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;Graph&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;mapId : java.lang.string&lt;/div&gt;&lt;div&gt;mapName : java.lang.string&lt;/div&gt;&lt;div&gt;nodes: java.util.List&amp;lt;Node&amp;gt;&lt;/div&gt;&lt;div&gt;graphstatistics : GraphStatistics&lt;br&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;get(int id) : Node&lt;/div&gt;&lt;div&gt;getGraphInformation() : GraphStatistics&lt;/div&gt;&lt;div&gt;getMapId() : java.lang.String()&lt;/div&gt;&lt;div&gt;getMapName() : java.lang.String()&lt;/div&gt;&lt;div&gt;getNodes() : java.util.List&amp;lt;Node&amp;gt;&lt;/div&gt;&lt;div&gt;toString() : java.lang.String&lt;/div&gt;&lt;div&gt;transpose() : Graph&lt;br&gt;&lt;/div&gt;&lt;div&gt;size() : int&lt;br&gt;&lt;/div&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="680" y="50" width="283" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-5" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;RoadInformation&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;roadType : RoadInformation.Roadtype&lt;/div&gt;&lt;div&gt;access : AccessRestrictions&lt;/div&gt;&lt;div&gt;isOneWay : boolean&lt;/div&gt;&lt;div&gt;maxSpeed : int&lt;/div&gt;&lt;div&gt;name : java.lang.String&lt;br&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;getAccessRestrictions() : AccessRestrictions&lt;/div&gt;&lt;div&gt;getMaximumSpeed() : int&lt;/div&gt;&lt;div&gt;getName() : java.lang.String&lt;/div&gt;&lt;div&gt;getType() : RoadInformation.RoadType&lt;/div&gt;&lt;div&gt;isOneWay() : boolean&lt;/div&gt;&lt;div&gt;toString() : java.lang.String&lt;br&gt;&lt;font face=&quot;Helvetica&quot;&gt;&lt;code&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="410" y="790" width="290" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-11" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Arc&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getDestination() : abstract Node&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getLength() : abstract float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getMinimumTravelTime() : double&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getOrigin() : abstract Node&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getPoints() : abstract java.util.List&amp;lt;Point&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getRoadInformation() : abstract RoadInformation&lt;/p&gt;getTravelTime (double speed) : double" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="80" y="470" width="270" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-13" value="&lt;div&gt;2&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="640" y="500" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-14" value="0..n" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="360" y="490" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-15" value="0..n" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="830" y="430" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-16" value="1..n" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="830" y="300" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-17" value="1..n" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="350" y="580" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-19" value="&lt;div&gt;1&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="480" y="770" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-20" value="" style="endArrow=none;html=1;entryX=0;entryY=0.308;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="EZNr9idk4kIAUqU_iQ0u-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350" y="524" as="sourcePoint" />
+            <mxPoint x="670" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-21" value="" style="endArrow=none;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=0.837;exitY=1.006;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="EZNr9idk4kIAUqU_iQ0u-11" target="EZNr9idk4kIAUqU_iQ0u-19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350" y="610.08" as="sourcePoint" />
+            <mxPoint x="680" y="610.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-22" value="" style="endArrow=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="EZNr9idk4kIAUqU_iQ0u-0" target="EZNr9idk4kIAUqU_iQ0u-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200.00000000000003" y="339.0200000000002" as="sourcePoint" />
+            <mxPoint x="327.03" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-23" value="" style="endArrow=none;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="EZNr9idk4kIAUqU_iQ0u-0" target="EZNr9idk4kIAUqU_iQ0u-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="230" y="350" as="sourcePoint" />
+            <mxPoint x="227.23404255319133" y="480" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-24" value="" style="endArrow=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="EZNr9idk4kIAUqU_iQ0u-4" target="EZNr9idk4kIAUqU_iQ0u-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="810" y="295" as="sourcePoint" />
+            <mxPoint x="762.4999999999998" y="460" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="820" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-25" value="1..n" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="220" y="350" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-26" value="0..n" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="220" y="440" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EZNr9idk4kIAUqU_iQ0u-27" value="" style="endArrow=none;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="EZNr9idk4kIAUqU_iQ0u-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="159.99574585635364" as="sourcePoint" />
+            <mxPoint x="752.5" y="324.83000000000004" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
