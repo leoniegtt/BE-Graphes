@@ -54,33 +54,40 @@ public class Path {
         List<Arc> arcs = new ArrayList<Arc>();
         List<Arc> successors = new ArrayList<Arc>();
         List<Node> destinations = new ArrayList<Node>();
+        float min = Float.POSITIVE_INFINITY;
+        Arc  ArcMin = null;
 
         if (graph.size()<=1) {
         	arcs.add(null);
         }
         else {
 	        for (int i = 0; i<graph.size()-1; i++) {
-
-	        	successors = graph.get(i).getSuccessors();
-	        	for (int k = 0; k<graph.get(i).getNumberOfSuccessors()-1; k++) {
-	        		destinations.add(successors.get(k).getDestination());
+	        	if (graph.get(i).getNumberOfSuccessors()==0) {
 	        	}
-	        	// if two consecutive nodes are not connected in the graph : illegal argument error
-	        	if (destinations.contains(graph.get(i+1))==false){ 
-		        		throw new IllegalArgumentException(
-		        				"list of nodes not valid, two consecutive nodes are not connected in the graph");
+	        	else if (graph.get(i).getNumberOfSuccessors()==1) {
+	        		ArcMin = arcs.get(0);
+			        arcs.add(ArcMin);
 	        	}
 	        	else {
-		            float min = Float.POSITIVE_INFINITY;
-		            Arc  ArcMin = null;
-		        	for (int j = 0 ; j<nodes.get(j).getNumberOfSuccessors()-1; j++) {
-		        		if 
-		        		(arcs.get(j).getLength()<min) {
-		        			min = arcs.get(j).getLength();
-		        			ArcMin = arcs.get(j);
-		        		}
+		        	successors = graph.get(i).getSuccessors();
+		        	for (int k = 0; k<graph.get(i).getNumberOfSuccessors()-1; k++) {
+		        		destinations.add(successors.get(k).getDestination());
 		        	}
-			        arcs.add(ArcMin);
+		        	// if two consecutive nodes are not connected in the graph : illegal argument error
+		        	if (destinations.contains(graph.get(i+1))==false){ 
+			        		throw new IllegalArgumentException(
+			        				"list of nodes not valid, two consecutive nodes are not connected in the graph");
+		        	}
+		        	else {
+
+			        	for (int j = 0 ; j<nodes.get(j).getNumberOfSuccessors()-1; j++) {
+			        		if (arcs.get(j).getLength()<=min) {
+			        			min = arcs.get(j).getLength();
+			        			ArcMin = arcs.get(j);
+			        		}
+			        	}
+				        arcs.add(ArcMin);
+		        	}
 	        	}
 	        }
         }
