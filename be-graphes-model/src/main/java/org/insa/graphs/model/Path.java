@@ -29,42 +29,13 @@ public class Path {
      * 
      * @throws IllegalArgumentException If the list of nodes is not valid, i.e. two
      *         consecutive nodes in the list are not connected in the graph.
+     * @deprecated
      * 
      */
     public static Path createFastestPathFromNodes(Graph graph, List<Node> nodes)
             throws IllegalArgumentException {
         List<Arc> arcs = new ArrayList<Arc>();
-        List<Arc> successors = new ArrayList<Arc>();
-        List<Node> destinations = new ArrayList<Node>();
 
-        if (graph.size()<=1) {
-        	arcs.add(null);
-        }
-        else {
-	        for (int i = 0; i<graph.size(); i++) {
-	        	successors = graph.get(i).getSuccessors();
-	        	for (int k = 0; k<=graph.get(i).getNumberOfSuccessors();) {
-	        		destinations.add(successors.get(k).getDestination());
-	        	}
-	        	if (destinations.contains(graph.get(i+1))==false){ 
-		        		throw new IllegalArgumentException(
-		        				"list of nodes not valid, two consecutive nodes are not connected in the graph");
-		        	}
-	        	else {
-	        		
-		            float fast = Float.POSITIVE_INFINITY;
-		            Arc  ArcFast = null;
-		        	for (int j = 0 ; j<nodes.get(j).getNumberOfSuccessors(); j++) {
-		        		if (arcs.get(j).getMinimumTravelTime()<=fast) {
-		        			//fast = getTravelTime(arcs.get(j));
-		        			ArcFast = arcs.get(j);
-		        		}
-		        	}
-			        arcs.add(ArcFast);
-	        	}
-
-	        }
-        }
         return new Path(graph, arcs);
     }
 
@@ -88,29 +59,29 @@ public class Path {
         	arcs.add(null);
         }
         else {
-	        for (int i = 0; i<graph.size(); i++) {
+	        for (int i = 0; i<graph.size()-1; i++) {
+
 	        	successors = graph.get(i).getSuccessors();
-	        	/**for (int k = 0; k<=graph.get(i).getNumberOfSuccessors();) {**/
-	        	
-	        		destinations.add(successors.get(i).getDestination());
-	        	//}
-		        //if (graph.get(i).getSuccessors().contains(graph.get(i+1))==false){ 
+	        	for (int k = 0; k<graph.get(i).getNumberOfSuccessors()-1; k++) {
+	        		destinations.add(successors.get(k).getDestination());
+	        	}
+	        	// if two consecutive nodes are not connected in the graph : illegal argument error
 	        	if (destinations.contains(graph.get(i+1))==false){ 
 		        		throw new IllegalArgumentException(
 		        				"list of nodes not valid, two consecutive nodes are not connected in the graph");
-		        	}
+	        	}
 	        	else {
 		            float min = Float.POSITIVE_INFINITY;
 		            Arc  ArcMin = null;
-		        	for (int j = 0 ; j<nodes.get(j).getNumberOfSuccessors(); j++) {
-		        		if (arcs.get(j).getLength()<=min) {
+		        	for (int j = 0 ; j<nodes.get(j).getNumberOfSuccessors()-1; j++) {
+		        		if 
+		        		(arcs.get(j).getLength()<min) {
 		        			min = arcs.get(j).getLength();
 		        			ArcMin = arcs.get(j);
 		        		}
 		        	}
 			        arcs.add(ArcMin);
 	        	}
-
 	        }
         }
         return new Path(graph, arcs);
