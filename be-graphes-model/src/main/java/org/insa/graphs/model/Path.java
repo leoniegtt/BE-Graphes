@@ -51,46 +51,42 @@ public class Path {
     
     public static Path createShortestPathFromNodes(Graph graph, List<Node> nodes)
             throws IllegalArgumentException {
+
+        //tests cas particuliers 
+        if (nodes.isEmpty()) {
+        	return new Path(graph);
+        }
+        else if (nodes.size() == 1) {
+        	return new Path(graph, nodes.get(0));
+        }
+
         List<Arc> arcs = new ArrayList<Arc>();
-        List<Arc> successors = new ArrayList<Arc>();
-        List<Node> destinations = new ArrayList<Node>();
-        float min = Float.POSITIVE_INFINITY;
-        Arc  ArcMin = null;
 
-        if (graph.size()<=1) {
-        	arcs.add(null);
-        }
-        else {
-	        for (int i = 0; i<graph.size()-1; i++) {
-	        	if (graph.get(i).getNumberOfSuccessors()==0) {
-	        	}
-	        	else if (graph.get(i).getNumberOfSuccessors()==1) {
-	        		ArcMin = arcs.get(0);
-			        arcs.add(ArcMin);
-	        	}
-	        	else {
-		        	successors = graph.get(i).getSuccessors();
-		        	for (int k = 0; k<graph.get(i).getNumberOfSuccessors()-1; k++) {
-		        		destinations.add(successors.get(k).getDestination());
-		        	}
-		        	// if two consecutive nodes are not connected in the graph : illegal argument error
-		        	if (destinations.contains(graph.get(i+1))==false){ 
-			        		throw new IllegalArgumentException(
-			        				"list of nodes not valid, two consecutive nodes are not connected in the graph");
-		        	}
-		        	else {
-
-			        	for (int j = 0 ; j<nodes.get(j).getNumberOfSuccessors()-1; j++) {
-			        		if (arcs.get(j).getLength()<=min) {
-			        			min = arcs.get(j).getLength();
-			        			ArcMin = arcs.get(j);
-			        		}
-			        	}
-				        arcs.add(ArcMin);
-		        	}
-	        	}
-	        }
-        }
+    	for (int i = 0; i<nodes.size()-1;i++) {
+	    	Node courant = graph.get(nodes.get(i).getId());
+	    	
+            List<Arc> successors = courant.getSuccessors();
+            double min = Double.POSITIVE_INFINITY;
+            Arc  ArcMin = null;
+            boolean valid = false;
+            
+    		for (Arc currentArc : successors) {
+    			if (currentArc.getDestination().equals(nodes.get(i+1))){ 
+		    		valid = true;
+		        		if (currentArc.getLength()<=min) {
+		        			min = currentArc.getLength();
+		        			ArcMin = currentArc;
+		        		}
+		    	}
+    		}
+    		
+    		if (!valid){
+	        		throw new IllegalArgumentException(
+	        				"list of nodes not valid, two consecutive nodes are not connected in the graph");
+    		}
+    		arcs.add(ArcMin);
+    	}
+	        
         return new Path(graph, arcs);
     }
 
