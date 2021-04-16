@@ -29,12 +29,45 @@ public class Path {
      * 
      * @throws IllegalArgumentException If the list of nodes is not valid, i.e. two
      *         consecutive nodes in the list are not connected in the graph.
-     * @deprecated
      * 
      */
     public static Path createFastestPathFromNodes(Graph graph, List<Node> nodes)
             throws IllegalArgumentException {
+
+        //tests cas particuliers 
+        if (nodes.isEmpty()) {
+        	return new Path(graph);
+        }
+        else if (nodes.size() == 1) {
+        	return new Path(graph, nodes.get(0));
+        }
+
         List<Arc> arcs = new ArrayList<Arc>();
+
+    	for (int i = 0; i<nodes.size()-1;i++) {
+	    	Node courant = graph.get(nodes.get(i).getId());
+	    	
+            List<Arc> successors = courant.getSuccessors();
+            double min = Double.POSITIVE_INFINITY;
+            Arc  ArcMin = null;
+            boolean valid = false;
+            
+    		for (Arc currentArc : successors) {
+    			if (currentArc.getDestination().equals(nodes.get(i+1))){ 
+		    		valid = true;
+		        		if (currentArc.getMinimumTravelTime()<=min) {
+		        			min = currentArc.getMinimumTravelTime();
+		        			ArcMin = currentArc;
+		        		}
+		    	}
+    		}
+    		
+    		if (!valid){
+	        		throw new IllegalArgumentException(
+	        				"list of nodes not valid, two consecutive nodes are not connected in the graph");
+    		}
+    		arcs.add(ArcMin);
+    	}
 
         return new Path(graph, arcs);
     }
