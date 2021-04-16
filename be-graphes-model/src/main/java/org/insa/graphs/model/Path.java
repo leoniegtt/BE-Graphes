@@ -44,6 +44,7 @@ public class Path {
 
         List<Arc> arcs = new ArrayList<Arc>();
 
+        //parcours de la liste de nodes pour trouver à chaque fois le chemin le plus rapide
     	for (int i = 0; i<nodes.size()-1;i++) {
 	    	Node courant = graph.get(nodes.get(i).getId());
 	    	
@@ -52,9 +53,11 @@ public class Path {
             Arc  ArcMin = null;
             boolean valid = false;
             
+          //recherche de l'arc le plus rapide pour le node
     		for (Arc currentArc : successors) {
     			if (currentArc.getDestination().equals(nodes.get(i+1))){ 
 		    		valid = true;
+		    		
 		        		if (currentArc.getMinimumTravelTime()<=min) {
 		        			min = currentArc.getMinimumTravelTime();
 		        			ArcMin = currentArc;
@@ -95,6 +98,7 @@ public class Path {
 
         List<Arc> arcs = new ArrayList<Arc>();
 
+        //parcours de la liste de nodes pour trouver à chaque fois le chemin le plus court
     	for (int i = 0; i<nodes.size()-1;i++) {
 	    	Node courant = graph.get(nodes.get(i).getId());
 	    	
@@ -103,6 +107,7 @@ public class Path {
             Arc  ArcMin = null;
             boolean valid = false;
             
+            //recherche de l'arc le plus rapide pour le node
     		for (Arc currentArc : successors) {
     			if (currentArc.getDestination().equals(nodes.get(i+1))){ 
 		    		valid = true;
