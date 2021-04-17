@@ -140,12 +140,18 @@ public class BinaryHeap<E extends Comparable<E>> implements PriorityQueue<E> {
     public void remove(E x) throws ElementNotFoundException {
 	    //recherche de l'élément (utiliser IndexOf)
 	    //si pas d'élément : throw exception
-	
+        //si trouvé : delete le node de l'array
+        //replace with fartest right node on the lowest level
+        //fix the heap
+        //update currentsize
+    
 	    if (indexOf("x").exists()) {
-	        //si trouvé : delete le node de l'array
-	        //replace with fartest right node on the lowest level
-	        //fix the heap
-	        //update currentsize
+	    	//non car ne pas utiliser remove de array list
+	    	// à la place faire une boucle pour tout décaler ?
+	    	this.array.remove(indexOf("x"))
+	    	this.array.add(indexOf("x", ))
+	    	currentSize = currentSize-1;
+    	
 	    }
 	    else { 
 	    	throw new ElementNotFoundException();
