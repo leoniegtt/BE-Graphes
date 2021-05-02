@@ -136,25 +136,22 @@ public class BinaryHeap<E extends Comparable<E>> implements PriorityQueue<E> {
     }
 
     @Override
-    //remove the given element from the priority queue
     public void remove(E x) throws ElementNotFoundException {
 	    //recherche de l'élément (utiliser IndexOf)
-	    //si pas d'élément : throw exception
-        //si trouvé : delete le node de l'array
-        //replace with fartest right node on the lowest level
-        //fix the heap
-        //update currentsize
-    
-	    if (indexOf(x).exists()) {
-	    	//non car ne pas utiliser remove de array list
-	    	// à la place faire une boucle pour tout décaler ?
-	    	this.array.get(indexOf(x)) = this.array.get(list.size()-1); 
-	    	currentSize = currentSize-1;
-    	
+	    //si pas d'élément (trouvé): throw exception
+    	if (array.indexOf(x) == -1 || this.isEmpty() ){
+	    	throw new ElementNotFoundException(x);
+    	}
+        
+    	else {
+	    	E last = array.get(array.size()-1);//find last element
+	    	this.arraySet(array.indexOf(x), last);//replace with last element
+	    	array.remove(array.size()-1);//remove last element
+	    	this.currentSize--; //update currentsize
+	    	
+	    	//fix the heap with percolate
 	    }
-	    else { 
-	    	throw new ElementNotFoundException();
-	    }
+
     }
 
     @Override
