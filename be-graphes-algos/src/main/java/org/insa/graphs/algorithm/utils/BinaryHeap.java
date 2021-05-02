@@ -145,11 +145,10 @@ public class BinaryHeap<E extends Comparable<E>> implements PriorityQueue<E> {
         //fix the heap
         //update currentsize
     
-	    if (indexOf("x").exists()) {
+	    if (indexOf(x).exists()) {
 	    	//non car ne pas utiliser remove de array list
 	    	// à la place faire une boucle pour tout décaler ?
-	    	this.array.remove(indexOf("x"))
-	    	this.array.add(indexOf("x", ))
+	    	this.array.get(indexOf(x)) = this.array.get(list.size()-1); 
 	    	currentSize = currentSize-1;
     	
 	    }
