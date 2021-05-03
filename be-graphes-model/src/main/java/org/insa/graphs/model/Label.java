@@ -35,12 +35,10 @@ public class Label {
     	return this.cost;
     }
     
-    /**
-    * @deprecated
-    */
-   // public compareTo() {
-    //	return null;
-    //}
+ 
+    public int compareTo(Label other) {
+    	return Double.compare(getCost(), other.getCost());
+    }
 
 }
  
