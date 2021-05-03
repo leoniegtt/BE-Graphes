@@ -6,12 +6,12 @@ import java.util.List;
 
 
 public class Label {
-
-    // number of the node associated with this label
-    private int currentNodeId;
-    
-    //corresponding node
+	
+    // node associated with this label
     private Node currentNode;
+
+    // corresponding id
+    private int currentNodeId;
 
     // true when the min cost of this node is known by the algorithm
     private Boolean marked;
@@ -23,15 +23,15 @@ public class Label {
     private int fatherId;
 
 
-    public Label(int currentNodeId, Boolean marked, double cost, int fatherId) {
-        this.currentNodeId = currentNodeId;
-        this.currentNode = nodes.get(currentNodeId);
+    public Label(Node currentNode, Boolean marked, double cost, int fatherId) {
+        this.currentNode = currentNode;
+        this.currentNodeId = currentNode.getId();
         this.marked = marked;
         this.cost = cost;
         this.fatherId = fatherId;
     }
     
-    public getCost(Label label) {
+    public double getCost() {
     	return this.cost;
     }
     
