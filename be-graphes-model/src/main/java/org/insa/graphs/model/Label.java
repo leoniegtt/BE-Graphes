@@ -5,24 +5,24 @@ import java.util.Collections;
 import java.util.List;
 
 
-public final class Label {
+public class Label {
 
-    // node associated with this label (name or number)
-    private final String currentNode;
+    // number of the node associated with this label
+    private int currentVertex;
 
     // true when the min cost of this node is known by the algorithm
-    private final Boolean mark;
+    private Boolean marked;
 
     // cost of the shortest path from the origin to the Node
-    private final Int cost;
+    private double cost;
     
     //precedent node on shortest current path
-    private final Node father;
+    private Node father;
 
 
-    public Label(String currentNode, Boolean mark, int cost, Node father) {
-        this.currentNode = currentNode;
-        this.mark = mark;
+    public Label(int currentVertex, Boolean marked, double cost, Node father) {
+        this.currentVertex = currentVertex;
+        this.marked = marked;
         this.cost = cost;
         this.father = father;
     }
@@ -34,8 +34,9 @@ public final class Label {
     /**
     * @deprecated
     */
-    public compareTo() {
-    }
+   // public compareTo() {
+    //	return null;
+    //}
 
 }
  
