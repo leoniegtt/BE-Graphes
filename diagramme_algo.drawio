@@ -1,38 +1,38 @@
-<mxfile host="app.diagrams.net" modified="2021-05-03T09:43:11.039Z" agent="5.0 (X11)" etag="TDF9vfM8BseaKRUrjHex" version="14.5.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-05-03T09:53:41.302Z" agent="5.0 (X11)" etag="EUFjs06EWmbyr-ED1CqU" version="14.5.6" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2650" dy="1340" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+    <mxGraphModel dx="1140" dy="1149" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="bEQB9hRq9CMuScLj74Na-0" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;ShortestPathObserver&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;notifyDestinationReached(Node node)&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;notifyNodeMarked(Node node)&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;notifyNodeReached(Node node)&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;notifyOriginProcessed(Node node)&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="570" y="20" width="230" height="120" as="geometry" />
+          <mxGeometry x="340" y="20" width="230" height="120" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-1" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;ArcInspector&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getCost(Arc arc): double&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getMAximumSpeed(): int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getMode(): AbstractInputData.Mode&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;isAllowed(Arc arc): boolean&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1320" y="30" width="200" height="130" as="geometry" />
+          <mxGeometry x="1980" y="50" width="200" height="130" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-2" target="bEQB9hRq9CMuScLj74Na-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-2" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;AbstractAlgorithm&amp;lt;Observer&amp;gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;addObserver(Observer observer): void&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getInputData(): AbstractInputData&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getObservers(): java.util.ArrayList&amp;lt;Observer&amp;gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;run(): AbstractSolution&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="475" y="193" width="250" height="100" as="geometry" />
+          <mxGeometry x="400" y="366" width="250" height="100" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-3" target="bEQB9hRq9CMuScLj74Na-27">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-3" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;font face=&quot;Helvetica&quot;&gt;AbstractInputData&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;getCost(Arc arc): double&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;getGraph(): Graph&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;getMaximumSpeed(): int&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;getMode(): AbstractInputData.Mode&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;isAllowed(Arc arc): boolean&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1750" y="220" width="260" height="120" as="geometry" />
+          <mxGeometry x="1310" y="424" width="260" height="120" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-4" target="bEQB9hRq9CMuScLj74Na-31">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-4" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;AbstractSolution&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getSolvingTime(): java.time.Duration&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getInputData(): AbstractInputData&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getStatus(): AbstractSolution.Status&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;isFeasible(): boolean&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1130" y="320" width="230" height="100" as="geometry" />
+          <mxGeometry x="1000" y="424" width="230" height="100" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-5" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;AlgorithmFactory&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;code&gt;&lt;span class=&quot;member-name-link&quot;&gt;&lt;a&gt;createAlgorithm&lt;/a&gt;&lt;/span&gt;​(java.lang.Class&amp;lt;? &lt;br&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&lt;code&gt;extends &lt;a title=&quot;class in org.insa.graphs.algorithm&quot;&gt;AbstractAlgorithm&lt;/a&gt;&amp;lt;?&amp;gt;&amp;gt; &lt;br&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&lt;code&gt;algorithm,&lt;br&gt;&lt;a title=&quot;class in org.insa.graphs.algorithm&quot;&gt;AbstractInputData&lt;/a&gt;&amp;nbsp;data): &lt;br&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&lt;code&gt;static AbstractAlgorithm&amp;lt;?&amp;gt;&lt;br&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&lt;code&gt;&lt;br&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&lt;code&gt;&lt;span class=&quot;member-name-link&quot;&gt;&lt;a&gt;getAlgorithmClass&lt;/a&gt;&lt;/span&gt;​(java.lang.Class&amp;lt;?&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&lt;code&gt; extends &lt;a title=&quot;class in org.insa.graphs.algorithm&quot;&gt;AbstractAlgorithm&lt;/a&gt;&amp;lt;?&amp;gt;&amp;gt; &lt;br&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&lt;code&gt;baseAlgorithm,java.lang.String&amp;nbsp;name):&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&lt;code&gt;&lt;code&gt;static java.lang.Class&amp;lt;? extends &lt;br&gt;&lt;/code&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&lt;code&gt;&lt;code&gt;&lt;a title=&quot;class in org.insa.graphs.algorithm&quot;&gt;AbstractAlgorithm&lt;/a&gt;&amp;lt;?&amp;gt;&amp;gt;&lt;/code&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;font face=&quot;Helvetica&quot;&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;span class=&quot;member-name-link&quot;&gt;&lt;a&gt;getAlgorithmNames&lt;/a&gt;&lt;/span&gt;​(java.lang.Class&amp;lt;? &lt;br&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;extends &lt;a title=&quot;class in org.insa.graphs.algorithm&quot;&gt;AbstractAlgorithm&lt;/a&gt;&amp;lt;?&amp;gt;&amp;gt; &lt;br&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;baseAlgorithm): &lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/font&gt;&lt;font face=&quot;Helvetica&quot;&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;static &lt;br&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;java.util.Set&amp;lt;java.lang.String&amp;gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;font face=&quot;Helvetica&quot;&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;span class=&quot;member-name-link&quot;&gt;&lt;a&gt;registerAlgorithm&lt;/a&gt;&lt;/span&gt;​(java.lang.Class&amp;lt;? &lt;br&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;extends &lt;a title=&quot;class in org.insa.graphs.algorithm&quot;&gt;AbstractAlgorithm&lt;/a&gt;&amp;lt;?&amp;gt;&amp;gt; &lt;br&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;baseAlgorithm,&lt;br&gt;java.lang.String&amp;nbsp;name,&lt;br&gt;java.lang.Class&amp;lt;? extends &lt;a title=&quot;class in org.insa.graphs.algorithm&quot;&gt;&lt;br&gt;&lt;/a&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;a title=&quot;class in org.insa.graphs.algorithm&quot;&gt;AbstractAlgorithm&lt;/a&gt;&amp;lt;?&amp;gt;&amp;gt;&amp;nbsp;algoClass): static&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Helvetica&quot;&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;void&lt;br&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1790" y="770" width="300" height="470" as="geometry" />
+          <mxGeometry x="1970" y="424" width="300" height="470" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-6" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;ArcInspectorFactory&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;getAllFilters(): static java.util.List&amp;lt;ArcInspector&amp;gt;&lt;br&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1430" y="230" width="250" height="70" as="geometry" />
+          <mxGeometry x="1640" y="424" width="250" height="70" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-8" target="bEQB9hRq9CMuScLj74Na-23">
           <mxGeometry relative="1" as="geometry" />
@@ -42,32 +42,66 @@
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-8">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="880" y="593" as="targetPoint" />
+            <mxPoint x="805" y="766" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-8" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;ShortestPathAlgorithm&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;getInputData(): ShortestPathData&lt;/div&gt;&lt;div&gt;notifyDestinationReached(Node node): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;notifyNodeMarked(Node node): void&lt;/div&gt;&lt;div&gt;notifyNodeReached(Node node): void&lt;/div&gt;&lt;div&gt;notifyOriginProcessed(Node node): void&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="480" y="373" width="240" height="120" as="geometry" />
+          <mxGeometry x="405" y="546" width="240" height="120" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-6" target="bEQB9hRq9CMuScLj74Na-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-18" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;AStarAlgorithm&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="760" y="593" width="240" height="60" as="geometry" />
+          <mxGeometry x="685" y="766" width="240" height="60" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-23" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;BellmanFordAlgorithm&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="480" y="593" width="240" height="60" as="geometry" />
+          <mxGeometry x="405" y="766" width="240" height="60" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-25" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;DjikstraAlgorithm&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="200" y="593" width="240" height="60" as="geometry" />
+          <mxGeometry x="125" y="766" width="240" height="60" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-27" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;ShortestPathData&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;Graph graph&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;Node origin&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;Node destination&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;ArcInspector arcinspector&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getDestination(): Node&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getOrigin(): Node&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;toString(): java.lang.String&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1780" y="450" width="200" height="160" as="geometry" />
+          <mxGeometry x="1340" y="654" width="200" height="160" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-31" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;ShortestPathSolution&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;ShortestPathData data&lt;/div&gt;&lt;div&gt;AbstractSolution.Status status&lt;/div&gt;&lt;div&gt;Path path&lt;br&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;getInputData(): ShortestPathData&lt;/div&gt;&lt;div&gt;getPath(): Path&lt;/div&gt;&lt;div&gt;toString(): java.lang.String&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1145" y="493" width="200" height="160" as="geometry" />
+          <mxGeometry x="1015" y="597" width="200" height="160" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-33" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;ShortestPathTextOberserver&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;java.io.PrintStream stream&lt;br&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;notifyDestinationReached(Node node): void&lt;/div&gt;&lt;div&gt;notifyMarkedNode(Node node): void&lt;/div&gt;&lt;div&gt;notifyNodeReached(Node node): void&lt;/div&gt;&lt;div&gt;notifyOriginProcessed(Node node)&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1100" y="740" width="240" height="130" as="geometry" />
+          <mxGeometry x="1015" y="900" width="240" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="bEQB9hRq9CMuScLj74Na-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-50" target="bEQB9hRq9CMuScLj74Na-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bEQB9hRq9CMuScLj74Na-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-50" target="bEQB9hRq9CMuScLj74Na-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bEQB9hRq9CMuScLj74Na-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-50" target="bEQB9hRq9CMuScLj74Na-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1070" y="270" />
+              <mxPoint x="1450" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bEQB9hRq9CMuScLj74Na-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-50" target="bEQB9hRq9CMuScLj74Na-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="250" />
+              <mxPoint x="1780" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bEQB9hRq9CMuScLj74Na-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-50" target="bEQB9hRq9CMuScLj74Na-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1250" y="135" />
+              <mxPoint x="1250" y="210" />
+              <mxPoint x="2120" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bEQB9hRq9CMuScLj74Na-50" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;java.lang.Object&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;equals&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getClass&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;hashCode&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;notify&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;notifyAll&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;toString&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;wait&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="950" y="30" width="160" height="140" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
