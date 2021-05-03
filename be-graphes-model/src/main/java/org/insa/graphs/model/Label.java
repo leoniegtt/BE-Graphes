@@ -8,7 +8,10 @@ import java.util.List;
 public class Label {
 
     // number of the node associated with this label
-    private int currentVertex;
+    private int currentNodeId;
+    
+    //corresponding node
+    private Node currentNode;
 
     // true when the min cost of this node is known by the algorithm
     private Boolean marked;
@@ -17,17 +20,18 @@ public class Label {
     private double cost;
     
     //precedent node on shortest current path
-    private Node father;
+    private int fatherId;
 
 
-    public Label(int currentVertex, Boolean marked, double cost, Node father) {
-        this.currentVertex = currentVertex;
+    public Label(int currentNodeId, Boolean marked, double cost, int fatherId) {
+        this.currentNodeId = currentNodeId;
+        this.currentNode = nodes.get(currentNodeId);
         this.marked = marked;
         this.cost = cost;
-        this.father = father;
+        this.fatherId = fatherId;
     }
     
-    public getCost() {
+    public getCost(Label label) {
     	return this.cost;
     }
     
