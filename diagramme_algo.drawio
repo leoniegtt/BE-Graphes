@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-05-03T09:53:41.302Z" agent="5.0 (X11)" etag="EUFjs06EWmbyr-ED1CqU" version="14.5.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-05-03T09:55:58.709Z" agent="5.0 (X11)" etag="v9JpzojddAvpMkdU8Eww" version="14.5.6" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1140" dy="1149" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
       <root>
@@ -8,7 +8,7 @@
           <mxGeometry x="340" y="20" width="230" height="120" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-1" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;ArcInspector&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getCost(Arc arc): double&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getMAximumSpeed(): int&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;getMode(): AbstractInputData.Mode&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;isAllowed(Arc arc): boolean&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1980" y="50" width="200" height="130" as="geometry" />
+          <mxGeometry x="2370" y="30" width="200" height="130" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-2" target="bEQB9hRq9CMuScLj74Na-8">
           <mxGeometry relative="1" as="geometry" />
@@ -67,7 +67,7 @@
           <mxGeometry x="1015" y="597" width="200" height="160" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-33" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;ShortestPathTextOberserver&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;java.io.PrintStream stream&lt;br&gt;&lt;/div&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div&gt;notifyDestinationReached(Node node): void&lt;/div&gt;&lt;div&gt;notifyMarkedNode(Node node): void&lt;/div&gt;&lt;div&gt;notifyNodeReached(Node node): void&lt;/div&gt;&lt;div&gt;notifyOriginProcessed(Node node)&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1015" y="900" width="240" height="130" as="geometry" />
+          <mxGeometry x="2340" y="424" width="240" height="130" as="geometry" />
         </mxCell>
         <mxCell id="bEQB9hRq9CMuScLj74Na-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-50" target="bEQB9hRq9CMuScLj74Na-2">
           <mxGeometry relative="1" as="geometry" />
@@ -97,6 +97,13 @@
               <mxPoint x="1250" y="135" />
               <mxPoint x="1250" y="210" />
               <mxPoint x="2120" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bEQB9hRq9CMuScLj74Na-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="bEQB9hRq9CMuScLj74Na-50" target="bEQB9hRq9CMuScLj74Na-33">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2340" y="100" />
             </Array>
           </mxGeometry>
         </mxCell>
