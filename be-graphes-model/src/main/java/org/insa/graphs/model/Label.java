@@ -31,14 +31,40 @@ public class Label {
         this.fatherId = fatherId;
     }
     
+    //get methods for label class
+    public int getCurrentNodeId() {
+    	return currentNode.getId();
+    }
+    
+    public Boolean isMarked() {
+    	return this.marked;
+    }
+    
     public double getCost() {
     	return this.cost;
     }
     
+    public int getFatherId() {
+    	return this.fatherId;
+    }
+    
+    //set methods for label class
+    public void SetMarked(boolean marked) {
+    	this.marked = marked;
+    }
+    
+    public void SetCost(double cost) {
+    	this.cost = cost;
+    }
+    
+    public void SetFather(int fatherId) {
+    	this.fatherId = fatherId;
+    }
+    
  
-    public int compareTo(Label other) {
+    //compare the cost of the current label with another label
+    public double compareTo(Label other) {
     	return Double.compare(getCost(), other.getCost());
     }
-
 }
  
