@@ -10,11 +10,10 @@ import org.insa.graphs.model.Arc;
 import org.insa.graphs.model.Path;
 import org.insa.graphs.model.Graph;
 
-import org.insa.graphs.algorithm.shortestpath.Label;
 import org.insa.graphs.algorithm.utils.BinaryHeap;
 
 public class DijkstraAlgorithm extends ShortestPathAlgorithm {
-
+	//cf cours p 89 algo dijkstra
     public DijkstraAlgorithm(ShortestPathData data) {
         super(data);
     }
@@ -39,7 +38,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         	labels[i]=new Label(i);
         }
         
-        //initialization with first node
+        //initialization of first node
         int OriginId = data.getOrigin().getId();
         labels[OriginId].SetCost(0);
         labels[OriginId].Mark(true);
@@ -47,24 +46,40 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
        
 
         //**start of the algorithm**
-        
-        //boolean there exists unmarked nodes
+        //boolean representing if there exists unmarked nodes
         boolean Unmarked = true;
         
+        //main loop while there are unmarked nodes and the heap isn't empty
         while (Unmarked && !heap.isEmpty()) {
         	Label min = heap.findMin();
         	heap.deleteMin();
+        	int minId = min.getCurrentNodeId();
         	min.Mark(true);
+        	Node minNode = graph.get(minId);
         	
-        
+	        for(Arc successor: minNode.getSuccessors() ) {
+	        	Label y = labels[successor.getDestination().getId()];
+	        	if (!y.isMarked()) {
+	        		//y.SetCost(Math.min(y.getCost(), min.getCost()+successor.getLength()));
+	        		if (y.getCost() > min.getCost()+successor.getLength()) {
+	        			y.SetCost(min.getCost()+successor.getLength());
+	        			if (){
+	        				
+	        			}
+	        			else {
+	        				heap.insert(y);
+	        			}
+	        			
+	        		}
+	        	
+	        	}
+	        	
+	        }
         }
-        
-        //cf cours p 89
         
         
         
         
         return solution;
     }
-
 }
