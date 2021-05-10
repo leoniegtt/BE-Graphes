@@ -25,7 +25,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         ShortestPathSolution solution = null;
         
         
-        //Initialization
+        //**Initialization**
         //initialize binary heap
         BinaryHeap<Label> heap = new BinaryHeap();
         
@@ -39,17 +39,26 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         	labels[i]=new Label(i);
         }
         
-        //initialization with first node(get first node)
+        //initialization with first node
         int OriginId = data.getOrigin().getId();
         labels[OriginId].SetCost(0);
         labels[OriginId].Mark(true);
         heap.insert(labels[OriginId]);
        
 
-        //start of the algorithm
+        //**start of the algorithm**
         
-        //Itérations
-        //while there exists unmarked nodes
+        //boolean there exists unmarked nodes
+        boolean Unmarked = true;
+        
+        while (Unmarked && !heap.isEmpty()) {
+        	Label min = heap.findMin();
+        	heap.deleteMin();
+        	min.Mark(true);
+        	
+        
+        }
+        
         //cf cours p 89
         
         
