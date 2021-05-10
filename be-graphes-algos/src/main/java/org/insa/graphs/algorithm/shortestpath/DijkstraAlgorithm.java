@@ -39,12 +39,13 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         	labels[i]=new Label(i);
         }
         
-        //initialization with first node
-        
-        
-        //cost = 0 for the first node
-        //insert ( first node, heap)
-        
+        //initialization with first node(get first node)
+        int OriginId = data.getOrigin().getId();
+        labels[OriginId].SetCost(0);
+        labels[OriginId].Mark(true);
+        heap.insert(labels[OriginId]);
+       
+
         //start of the algorithm
         
         //Itérations

@@ -44,8 +44,8 @@ public class Label implements Comparable<Label>{
     }
     
     //set methods for label class
-    public void Mark(boolean marked) {
-    	this.marked = true;
+    public void Mark(Boolean marked) {
+    	this.marked = marked;
     }
     
     public void SetCost(double cost) {
