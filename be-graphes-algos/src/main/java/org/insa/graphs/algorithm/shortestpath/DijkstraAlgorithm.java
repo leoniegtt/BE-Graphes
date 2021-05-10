@@ -64,7 +64,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	        		if (y.getCost() > min.getCost()+successor.getLength()) {
 	        			y.SetCost(min.getCost()+successor.getLength());
 	        			if (){
-	        				
+	        				//arrayset() ?
 	        			}
 	        			else {
 	        				heap.insert(y);
