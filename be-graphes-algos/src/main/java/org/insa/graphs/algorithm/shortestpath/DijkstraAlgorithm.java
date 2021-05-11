@@ -72,9 +72,20 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	        				heap.insert(y);
 	        				y.SetFather(successor);
 	        		}
+	        		y.Mark(true);
 	        	}
+	        	Unmarked = false;
+	        	for (Label current: heap) {
+	        		if (!current.isMarked()) {
+	        			Unmarked = true;
+	        		}
+	        	}
+	        	
 	        }
+	        //ajouter sommet à la solution
+	        //gérer marquage des sommets et variable Unmarked
         }
+        //créer solution à partir du tas
 
         return solution;
     }
