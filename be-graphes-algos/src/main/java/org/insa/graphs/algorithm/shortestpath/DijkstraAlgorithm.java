@@ -13,8 +13,8 @@ import org.insa.graphs.model.Graph;
 import org.insa.graphs.algorithm.utils.BinaryHeap;
 
 public class DijkstraAlgorithm extends ShortestPathAlgorithm {
-	//cf cours p 89 algo dijkstra
-    public DijkstraAlgorithm(ShortestPathData data) {
+
+	public DijkstraAlgorithm(ShortestPathData data) {
         super(data);
     }
 
@@ -38,12 +38,11 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         	labels[i]=new Label(i);
         }
         
-        //initialization of first node
+        //initialization of first node and new graph
         int OriginId = data.getOrigin().getId();
         labels[OriginId].SetCost(0);
         labels[OriginId].Mark(true);
         heap.insert(labels[OriginId]);
-       
 
         //**start of the algorithm**
         //boolean representing if there exists unmarked nodes
@@ -86,6 +85,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	        //gérer marquage des sommets et variable Unmarked
         }
         //créer solution à partir du tas
+        //solution= 
 
         return solution;
     }
