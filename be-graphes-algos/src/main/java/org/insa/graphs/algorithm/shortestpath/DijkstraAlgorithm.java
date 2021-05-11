@@ -9,7 +9,7 @@ import org.insa.graphs.model.Node;
 import org.insa.graphs.model.Arc;
 import org.insa.graphs.model.Path;
 import org.insa.graphs.model.Graph;
-
+import org.insa.graphs.algorithm.AbstractSolution.Status;
 import org.insa.graphs.algorithm.utils.BinaryHeap;
 
 public class DijkstraAlgorithm extends ShortestPathAlgorithm {
@@ -22,7 +22,6 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
     protected ShortestPathSolution doRun() {
         final ShortestPathData data = getInputData();
         ShortestPathSolution solution = null;
-        
         
         //**Initialization**
         //initialize binary heap
@@ -53,7 +52,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         	Label min = heap.findMin();
         	heap.deleteMin();
         	int minId = min.getCurrentNodeId();
-        	min.Mark(true);
+        	min.Mark(true); //modifier dans labels ou heap??????
         	Node minNode = graph.get(minId);
         	
 	        for(Arc successor: minNode.getSuccessors() ) {
@@ -79,13 +78,14 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	        			Unmarked = true;
 	        		}
 	        	}
-	        	
 	        }
 	        //ajouter sommet à la solution
 	        //gérer marquage des sommets et variable Unmarked
         }
-        //créer solution à partir du tas
+        //vérifier que la destination à des prédécesseurs
+        //si oui créer solution à partir du tas
         //solution= 
+    
 
         return solution;
     }
