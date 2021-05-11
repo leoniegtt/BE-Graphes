@@ -61,25 +61,21 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	        	Label y = labels[successor.getDestination().getId()];
 	        	if (!y.isMarked()) {
 	        		//y.SetCost(Math.min(y.getCost(), min.getCost()+successor.getLength()));
-	        		if (y.getCost() > min.getCost()+successor.getLength()) {
-	        			y.SetCost(min.getCost()+successor.getLength());
-	        			if (){
-	        				//arrayset() ?
-	        			}
-	        			else {
+	        		double weight = min.getCost()+successor.getLength() ;
+	        		if (y.getCost() > min.getCost() + weight) {
+	        			y.SetCost(min.getCost() + weight);
+	        			try {
+	        				heap.remove(y);
+	        			} catch (Exception ElementNotFoundException){
 	        				heap.insert(y);
 	        			}
-	        			
+	        				heap.insert(y);
+	        				y.SetFather(successor);
 	        		}
-	        	
 	        	}
-	        	
 	        }
         }
-        
-        
-        
-        
+
         return solution;
     }
 }
