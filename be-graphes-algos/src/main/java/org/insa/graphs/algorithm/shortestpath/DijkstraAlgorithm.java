@@ -53,23 +53,22 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         
         //main loop while there are unmarked nodes and the heap isn't empty
         while (Unmarked && !heap.isEmpty()) {
-        	//Label min = heap.findMin();
+        	//find min element in heap
         	Label min = heap.deleteMin();
         	int minId = min.getCurrentNodeId();
         	labels[minId].Mark(true);
         	Node minNode = graph.get(minId);
-        	
+        	//find closest successor
 	        for(Arc successor: minNode.getSuccessors() ) {
 	        	Node currentNode = successor.getDestination();
-	        	//int nodeId = currentNode.getId();
-	        	int nodeId = successor.getDestination().getId();
+	        	int nodeId = currentNode.getId();
 	        	Label y = labels[nodeId];
 	        	
 	        	//check allowed roads
 	        	if (!data.isAllowed(successor)) {
 	        		continue;
 	        	}
-	        	
+	        	//if node unmarked : check if shorter path
 	        	if (!y.isMarked()) {
 	        		double weight = data.getCost(successor);
 	        		double oldCost = y.getCost();
@@ -82,23 +81,22 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	        			y.SetCost(newCost);
 	        			y.SetFather(successor);
 	        			heap.insert(y);
-	        			//y.Mark(true);
 	        		}
-	        	}//fin if
-	        }//fin for
+	        	}
+	        }
 	        
 	        //check if the destination is marked(=arrived)
 	        Unmarked = false;
         	if (!labels[data.getDestination().getId()].isMarked()) {
         			Unmarked = true;
-        	}//fin if
-        }//fin while
+        	}
+        }
         
         //check that the destination has a predecessor(feasible solution)
         if (labels[data.getDestination().getId()].getFather()==null) {
         	solution = new ShortestPathSolution(data, Status.INFEASIBLE);
         } else {
-        //if it does: build the solution (create and fill arc list to create graph)
+        //if it does: build the solution (create and fill arc list starting from the destination to create graph)
         	ArrayList<Arc> arcList = new ArrayList<Arc>();
         	int dest = data.getDestination().getId();
         	Arc arcDad = null;
@@ -106,18 +104,17 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         		arcDad = labels[dest].getFather();
         		arcList.add(arcDad);
         		dest = arcDad.getOrigin().getId();
-        	}//fin while
+        	}
         
-        //reverse the path
+        //reverse the path as we started from the destination
         Collections.reverse(arcList);
             
         //build the final solution
         Path finalPath = new Path(graph, arcList);       
         solution = new ShortestPathSolution(data, Status.OPTIMAL, finalPath);
-        //}
-	    } //fin else
+	    }
 
         return solution;
-    } //fin dorun
+    }
         
-} //fin class
+}
