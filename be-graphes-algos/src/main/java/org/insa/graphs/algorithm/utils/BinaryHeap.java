@@ -140,25 +140,26 @@ public class BinaryHeap<E extends Comparable<E>> implements PriorityQueue<E> {
 	   
     	if (this.isEmpty()) {
     		throw new ElementNotFoundException(x);
-    	}
-    	
-    	int index =array.indexOf(x) ;
-    	if ( index == -1 || index>(this.currentSize-1)){
-	    	throw new ElementNotFoundException(x);
-    	}
-    	else {
-	    	E last = array.get(array.size()-1);//find last element
-	    	this.arraySet(index, last);//replace with last element
-	    	array.remove(array.size()-1);//remove last element
-	    	this.currentSize--; //update currentsize
-	    	
-	    	//fix the heap with percolate
-	    	if (index != 0 && last.compareTo(array.get(indexParent(index))) < 0) {
-	    		this.percolateUp(index);
+    	} else {
+	    	int index = this.array.indexOf(x) ;
+	    	if ( index == -1 || index>(this.currentSize-1)){
+		    	throw new ElementNotFoundException(x);
 	    	} else {
-	    		this.percolateDown(index);
+		    	E last = this.array.get(this.currentSize-1);//find last element
+		    	this.arraySet(index, last);//replace with last element
+		    	// array.remove(array.size()-1);//remove last element
+		    	this.currentSize--; //update currentsize
+		    	this.percolateDown(index);
+		    	this.percolateUp(index);
+		    	//fix the heap with percolate
+		    	//if (index != 0 && last.compareTo(array.get(indexParent(index))) < 0) {
+		    	//	this.percolateUp(index);
+		    	//} else {
+		    	//	this.percolateDown(index);
+		    	//}
+	    
 	    	}
-	    }
+    	}
 
     }
 
