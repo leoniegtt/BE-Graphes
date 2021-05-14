@@ -44,12 +44,10 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         labels[originId].Mark(true);
         heap.insert(labels[originId]);
 
-        //**start of the algorithm**
-        //boolean representing if there exists unmarked nodes
-        boolean Unmarked = true;
         
-        //test bug
-        //int count = 0; 
+        //**main part of the algorithm**
+        //boolean representing if there exists unmarked nodes (stop the algorithm if not)
+        boolean Unmarked = true;
         
         //main loop while there are unmarked nodes and the heap isn't empty
         while (Unmarked && !heap.isEmpty()) {
@@ -58,22 +56,22 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         	int minId = min.getCurrentNodeId();
         	labels[minId].Mark(true);
         	Node minNode = graph.get(minId);
-        	//find closest successor
+        	//find closest successor of said element
 	        for(Arc successor: minNode.getSuccessors() ) {
 	        	Node currentNode = successor.getDestination();
 	        	int nodeId = currentNode.getId();
 	        	Label y = labels[nodeId];
 	        	
-	        	//check allowed roads
+	        	//check allowed roads (select for cars)
 	        	if (!data.isAllowed(successor)) {
 	        		continue;
 	        	}
+	        	
 	        	//if node unmarked : check if shorter path
 	        	if (!y.isMarked()) {
 	        		double weight = data.getCost(successor);
 	        		double oldCost = y.getCost();
 	        		double newCost = labels[minId].getCost() + weight;
-	        		
 	        		if (oldCost > newCost) {
 	        			if (Double.isFinite(oldCost)) {
 	        				heap.remove(y);
@@ -92,7 +90,9 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         	}
         }
         
-        //check that the destination has a predecessor(feasible solution)
+        
+        //**building the solution**
+        //check that the destination has a predecessor(=feasible solution)
         if (labels[data.getDestination().getId()].getFather()==null) {
         	solution = new ShortestPathSolution(data, Status.INFEASIBLE);
         } else {
@@ -106,15 +106,14 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         		dest = arcDad.getOrigin().getId();
         	}
         
-        //reverse the path as we started from the destination
+        //reverse the list as we started from the destination
         Collections.reverse(arcList);
             
         //build the final solution
         Path finalPath = new Path(graph, arcList);       
         solution = new ShortestPathSolution(data, Status.OPTIMAL, finalPath);
 	    }
-
+        
         return solution;
     }
-        
 }
