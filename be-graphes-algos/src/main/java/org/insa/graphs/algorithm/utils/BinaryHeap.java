@@ -155,8 +155,7 @@ public class BinaryHeap<E extends Comparable<E>> implements PriorityQueue<E> {
 	    	//fix the heap with percolate
 	    	if (index != 0 && last.compareTo(array.get(indexParent(index))) < 0) {
 	    		this.percolateUp(index);
-	    	}
-	    	else {
+	    	} else {
 	    		this.percolateDown(index);
 	    	}
 	    }

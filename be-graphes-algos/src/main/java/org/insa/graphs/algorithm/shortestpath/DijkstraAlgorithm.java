@@ -1,14 +1,14 @@
 package org.insa.graphs.algorithm.shortestpath;
 
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 import org.insa.graphs.model.Node;
 import org.insa.graphs.model.Arc;
 import org.insa.graphs.model.Path;
 import org.insa.graphs.model.Graph;
+
+import org.insa.graphs.algorithm.shortestpath.Label;
 import org.insa.graphs.algorithm.AbstractSolution.Status;
 import org.insa.graphs.algorithm.utils.BinaryHeap;
 
@@ -29,12 +29,13 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         
         //retrieve the graph and its size
         Graph graph = data.getGraph();
-        final int nbNodes = graph.size();
+        int nbNodes = graph.size();
         
         //initialization of the labels (see label.java)
         Label[] labels = new Label[nbNodes];
-        for (int i=0; i<nbNodes;i++) {
-        	labels[i]=new Label(i);
+        //for (int i=0; i<nbNodes;i++) {
+        for (Node node : graph.getNodes()) {
+        	labels[node.getId()]=new Label(node.getId());
         }
         
         //initialization of first node and new graph
@@ -47,18 +48,27 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         //boolean representing if there exists unmarked nodes
         boolean Unmarked = true;
         
+        //test bug
+        //int count = 0; 
+        
         //main loop while there are unmarked nodes and the heap isn't empty
         while (Unmarked && !heap.isEmpty()) {
-        	Label min = heap.findMin();
-        	heap.deleteMin();
+        	//Label min = heap.findMin();
+        	Label min = heap.deleteMin();
         	int minId = min.getCurrentNodeId();
         	labels[minId].Mark(true);
         	Node minNode = graph.get(minId);
         	
 	        for(Arc successor: minNode.getSuccessors() ) {
 	        	Node currentNode = successor.getDestination();
-	        	int nodeId = currentNode.getId();
+	        	//int nodeId = currentNode.getId();
+	        	int nodeId = successor.getDestination().getId();
 	        	Label y = labels[nodeId];
+	        	
+	        	//check allowed roads
+	        	if (!data.isAllowed(successor)) {
+	        		continue;
+	        	}
 	        	
 	        	if (!y.isMarked()) {
 	        		double weight = data.getCost(successor);
@@ -68,40 +78,46 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	        		if (oldCost > newCost) {
 	        			if (Double.isFinite(oldCost)) {
 	        				heap.remove(y);
-	        			}
+	        			} 
 	        			y.SetCost(newCost);
 	        			y.SetFather(successor);
 	        			heap.insert(y);
-	        			y.Mark(true);
+	        			//y.Mark(true);
 	        		}
-	        	}
-	        }
+	        	}//fin if
+	        }//fin for
+	        
 	        //check if the destination is marked(=arrived)
 	        Unmarked = false;
         	if (!labels[data.getDestination().getId()].isMarked()) {
         			Unmarked = true;
-        	}
-            
-	        //ajouter sommet à la solution
-	        //gérer marquage des sommets
+        	}//fin if
+        }//fin while
         
-        //check that the destination has predecessors(feasible solution)
+        //check that the destination has a predecessor(feasible solution)
         if (labels[data.getDestination().getId()].getFather()==null) {
         	solution = new ShortestPathSolution(data, Status.INFEASIBLE);
-        }
-      //if it is: build the solution
-        else {
-        	ArrayList<Arc> arcs = new ArrayList <Arc>();
+        } else {
+        //if it does: build the solution (create and fill arc list to create graph)
+        	ArrayList<Arc> arcList = new ArrayList<Arc>();
         	int dest = data.getDestination().getId();
         	Arc arcDad = null;
-        	while (!labels[dest].getFather()==null) {
-        		
-        	}
-        	
-        }
-    
-	    }
+        	while (labels[dest].getFather()!=null) {
+        		arcDad = labels[dest].getFather();
+        		arcList.add(arcDad);
+        		dest = arcDad.getOrigin().getId();
+        	}//fin while
+        
+        //reverse the path
+        Collections.reverse(arcList);
+            
+        //build the final solution
+        Path finalPath = new Path(graph, arcList);       
+        solution = new ShortestPathSolution(data, Status.OPTIMAL, finalPath);
+        //}
+	    } //fin else
 
         return solution;
-    }
-}
+    } //fin dorun
+        
+} //fin class
