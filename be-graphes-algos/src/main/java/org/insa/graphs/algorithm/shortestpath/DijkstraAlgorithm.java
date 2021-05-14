@@ -61,38 +61,46 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	        	Label y = labels[nodeId];
 	        	
 	        	if (!y.isMarked()) {
-	        		//y.SetCost(Math.min(y.getCost(), min.getCost()+successor.getLength()));
 	        		double weight = data.getCost(successor);
 	        		double oldCost = y.getCost();
 	        		double newCost = labels[minId].getCost() + weight;
 	        		
 	        		if (oldCost > newCost) {
+	        			if (Double.isFinite(oldCost)) {
+	        				heap.remove(y);
+	        			}
 	        			y.SetCost(newCost);
 	        			y.SetFather(successor);
-	        			try {
-	        				heap.remove(y);
-	        				heap.insert(y);
-	        			} catch (Exception ElementNotFoundException){
-	        				heap.insert(y);
-	        			}
-	        				
-	        		}
-	        		y.Mark(true);
-	        	}
-	        	Unmarked = false;
-	        	for (Label current: heap) {
-	        		if (!current.isMarked()) {
-	        			Unmarked = true;
+	        			heap.insert(y);
+	        			y.Mark(true);
 	        		}
 	        	}
 	        }
+	        //check if the destination is marked(=arrived)
+	        Unmarked = false;
+        	if (!labels[data.getDestination().getId()].isMarked()) {
+        			Unmarked = true;
+        	}
+            
 	        //ajouter sommet à la solution
-	        //gérer marquage des sommets et variable Unmarked
+	        //gérer marquage des sommets
+        
+        //check that the destination has predecessors(feasible solution)
+        if (labels[data.getDestination().getId()].getFather()==null) {
+        	solution = new ShortestPathSolution(data, Status.INFEASIBLE);
         }
-        //vérifier que la destination à des prédécesseurs
-        //si oui créer solution à partir du tas
-        //solution= 
+      //if it is: build the solution
+        else {
+        	ArrayList<Arc> arcs = new ArrayList <Arc>();
+        	int dest = data.getDestination().getId();
+        	Arc arcDad = null;
+        	while (!labels[dest].getFather()==null) {
+        		
+        	}
+        	
+        }
     
+	    }
 
         return solution;
     }
