@@ -25,7 +25,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         
         //**Initialization**
         //initialize binary heap
-        BinaryHeap<Label> heap = new BinaryHeap();
+        BinaryHeap<Label> heap = new BinaryHeap<Label>();
         
         //retrieve the graph and its size
         Graph graph = data.getGraph();
@@ -38,10 +38,10 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         }
         
         //initialization of first node and new graph
-        int OriginId = data.getOrigin().getId();
-        labels[OriginId].SetCost(0);
-        labels[OriginId].Mark(true);
-        heap.insert(labels[OriginId]);
+        int originId = data.getOrigin().getId();
+        labels[originId].SetCost(0);
+        labels[originId].Mark(true);
+        heap.insert(labels[originId]);
 
         //**start of the algorithm**
         //boolean representing if there exists unmarked nodes
@@ -52,23 +52,30 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         	Label min = heap.findMin();
         	heap.deleteMin();
         	int minId = min.getCurrentNodeId();
-        	min.Mark(true); //modifier dans labels ou heap??????
+        	labels[minId].Mark(true);
         	Node minNode = graph.get(minId);
         	
 	        for(Arc successor: minNode.getSuccessors() ) {
-	        	Label y = labels[successor.getDestination().getId()];
+	        	Node currentNode = successor.getDestination();
+	        	int nodeId = currentNode.getId();
+	        	Label y = labels[nodeId];
+	        	
 	        	if (!y.isMarked()) {
 	        		//y.SetCost(Math.min(y.getCost(), min.getCost()+successor.getLength()));
-	        		double weight = min.getCost()+successor.getLength() ;
-	        		if (y.getCost() > min.getCost() + weight) {
-	        			y.SetCost(min.getCost() + weight);
+	        		double weight = data.getCost(successor);
+	        		double oldCost = y.getCost();
+	        		double newCost = labels[minId].getCost() + weight;
+	        		
+	        		if (oldCost > newCost) {
+	        			y.SetCost(newCost);
+	        			y.SetFather(successor);
 	        			try {
 	        				heap.remove(y);
+	        				heap.insert(y);
 	        			} catch (Exception ElementNotFoundException){
 	        				heap.insert(y);
 	        			}
-	        				heap.insert(y);
-	        				y.SetFather(successor);
+	        				
 	        		}
 	        		y.Mark(true);
 	        	}
