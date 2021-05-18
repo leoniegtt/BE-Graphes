@@ -59,10 +59,21 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         	Label min = heap.deleteMin();
         	int minId = min.getCurrentNodeId();
         	labels[minId].Mark(true);
+        	
         	Node minNode = graph.get(minId);
+        	
+			//Notify all observers that the node has been marked
+			notifyNodeMarked(minNode);
+        	
+			//check that the cost of the marked labels is increasing
+        	//System.out.println("cost of label " + labels[minId].getCost() +" = " + labels[minId].getCost());
+        	
+			//to check nb successors coherent later
+        	//int count = 0;
         	
         	//find closest successor of said element
 	        for(Arc successor: minNode.getSuccessors() ) {
+	        	count++;
 	        	Node currentNode = successor.getDestination();
 	        	int nodeId = currentNode.getId();
 	        	Label y = labels[nodeId];
@@ -87,17 +98,17 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	        			if (Double.isFinite(oldCost)) {
 	        				heap.remove(y);
 	        			}
-	        			//y.Mark(true);
-	        			//Notify all observers that the node has been marked
-	        			notifyNodeMarked(currentNode);
 	        			
 	        			y.SetCost(newCost);
 	        			y.SetFather(successor);
 	        			heap.insert(y);
-	        			System.out.println("cost of label " + y.getCurrentNodeId() +" = " + y.getCost());
 	        		}
+
 	        	}
 	        }
+	        //check that the nb of explored successors is coherent
+        	//int diff = minNode.getNumberOfSuccessors() - count ;
+        	//System.out.println("différence = " + diff);
 	        
 	        //check if the destination is marked(=arrived)
 	        Unmarked = false;
@@ -124,6 +135,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         		arcDad = labels[dest].getFather();
         		arcList.add(arcDad);
         		dest = arcDad.getOrigin().getId();
+        		//System.out.println("cost of label " + labels[dest].getCurrentNodeId() +" = " + labels[dest].getCost());
         	}
         
         //reverse the list as we started from the destination
