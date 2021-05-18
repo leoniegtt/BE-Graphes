@@ -61,8 +61,6 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         	labels[minId].Mark(true);
         	Node minNode = graph.get(minId);
         	
-
-        	
         	//find closest successor of said element
 	        for(Arc successor: minNode.getSuccessors() ) {
 	        	Node currentNode = successor.getDestination();
@@ -89,13 +87,14 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	        			if (Double.isFinite(oldCost)) {
 	        				heap.remove(y);
 	        			}
-	        			y.Mark(true);
+	        			//y.Mark(true);
 	        			//Notify all observers that the node has been marked
 	        			notifyNodeMarked(currentNode);
 	        			
 	        			y.SetCost(newCost);
 	        			y.SetFather(successor);
 	        			heap.insert(y);
+	        			System.out.println("cost of label " + y.getCurrentNodeId() +" = " + y.getCost());
 	        		}
 	        	}
 	        }
