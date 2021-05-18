@@ -1,31 +1,32 @@
 package org.insa.graphs.algorithm.shortestpath;
+
+import org.insa.graphs.model.Arc;
 	
 public class LabelStar extends Label implements Comparable<Label> {
-		
-	//cost of the estimated shortest distance
-	private double costDist;
-	
+			
 	//total cost
-	private double totalCost;
+	private double otherCost;
 	
-	public LabelStar(int currentNode ) {
-		super(currentNode);
-	    this.costDist = Double.POSITIVE_INFINITY;
-	    this.totalCost = 0;
+
+	public LabelStar(int currentNodeId, Boolean marked, double cost, Arc father ) {
+		//super(currentNodeId, marked, cost, father);
+		super(currentNodeId);
+		this.otherCost = 0;
 	}
 	
 	//get functions
-	public double getCostDist() {
-		return this.costDist;
+	public double getOtherCost() {
+		return this.otherCost;
 	}
 	 
 	public double getTotalCost(double cost) {
-		return this.getCostDist() + this.getCost();
+		return this.getOtherCost() + this.getCost();
+			
 	}
 	 
 	 //set functions
-	 public void SetCostDist(double costDist) {
-		 this.costDist = costDist;
+	 public void SetOtherCost(double otherCost) {
+		 this.otherCost = otherCost;
 	 }
 		 
 }
