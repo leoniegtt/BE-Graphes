@@ -38,6 +38,9 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         	labels[node.getId()]=new Label(node.getId());
         }
         
+     // Notify observers about the first event (origin processed).
+        notifyOriginProcessed(data.getOrigin());
+        
         //initialization of first node and new graph
         int originId = data.getOrigin().getId();
         labels[originId].SetCost(0);
@@ -51,11 +54,15 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         
         //main loop while there are unmarked nodes and the heap isn't empty
         while (Unmarked && !heap.isEmpty()) {
+        	
         	//find min element in heap
         	Label min = heap.deleteMin();
         	int minId = min.getCurrentNodeId();
         	labels[minId].Mark(true);
         	Node minNode = graph.get(minId);
+        	
+
+        	
         	//find closest successor of said element
 	        for(Arc successor: minNode.getSuccessors() ) {
 	        	Node currentNode = successor.getDestination();
@@ -72,10 +79,20 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	        		double weight = data.getCost(successor);
 	        		double oldCost = y.getCost();
 	        		double newCost = labels[minId].getCost() + weight;
+	        		
+	            	//notify all observers that a node has been reached for the first tim
+	            	if (Double.isInfinite(oldCost) && Double.isFinite(newCost)) {
+	                    notifyNodeReached(currentNode);
+	                }
+	            	
 	        		if (oldCost > newCost) {
 	        			if (Double.isFinite(oldCost)) {
 	        				heap.remove(y);
-	        			} 
+	        			}
+	        			y.Mark(true);
+	        			//Notify all observers that the node has been marked
+	        			notifyNodeMarked(currentNode);
+	        			
 	        			y.SetCost(newCost);
 	        			y.SetFather(successor);
 	        			heap.insert(y);
@@ -96,7 +113,11 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         if (labels[data.getDestination().getId()].getFather()==null) {
         	solution = new ShortestPathSolution(data, Status.INFEASIBLE);
         } else {
-        //if it does: build the solution (create and fill arc list starting from the destination to create graph)
+        	
+        	//Notify all observers that the destination has been reached
+            notifyDestinationReached(data.getDestination());
+        	
+            //build the solution (create and fill arc list starting from the destination to create graph)
         	ArrayList<Arc> arcList = new ArrayList<Arc>();
         	int dest = data.getDestination().getId();
         	Arc arcDad = null;
