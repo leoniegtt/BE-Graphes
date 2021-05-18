@@ -73,7 +73,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         	
         	//find closest successor of said element
 	        for(Arc successor: minNode.getSuccessors() ) {
-	        	count++;
+	        	//count++;
 	        	Node currentNode = successor.getDestination();
 	        	int nodeId = currentNode.getId();
 	        	Label y = labels[nodeId];
