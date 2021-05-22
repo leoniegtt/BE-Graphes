@@ -2,7 +2,7 @@ package org.insa.graphs.algorithm.shortestpath;
 
 
 import org.insa.graphs.model.Arc;
-import java.lang.Math;
+//import java.lang.Math;
 
 
 public class Label implements Comparable<Label>{
@@ -63,9 +63,9 @@ public class Label implements Comparable<Label>{
     
  
     //compare the cost of the current label with another label
-    public double compareTo(Label other) {
-		  if (this.getTotalCost()==other.getTotalCost()) { 
-			  return Math.min(getTotalCost(), other.getTotalCost()) ;
+    public int compareTo(Label other) {
+		 if (this.getTotalCost()==other.getTotalCost()) {
+			  return Double.compare(getOtherCost(), other.getOtherCost()) ;
 		  } else { 
 			  return Double.compare(getTotalCost(), other.getTotalCost()); 
 		  }

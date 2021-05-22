@@ -33,7 +33,6 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         
         //initialization of the labels (see label.java)
         Label[] labels = new Label[nbNodes];
-        //for (int i=0; i<nbNodes;i++) {
         for (Node node : graph.getNodes()) {
         	labels[node.getId()]=new Label(node.getId());
         }

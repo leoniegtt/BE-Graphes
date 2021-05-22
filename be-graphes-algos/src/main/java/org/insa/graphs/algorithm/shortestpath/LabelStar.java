@@ -28,6 +28,5 @@ public class LabelStar extends Label implements Comparable<Label> {
 	 public void SetOtherCost(double otherCost) {
 		 this.otherCost = otherCost;
 	 }
-		 
 }
  
