@@ -17,12 +17,22 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	public DijkstraAlgorithm(ShortestPathData data) {
         super(data);
     }
+	
+
+    Label[] InitLabels(ShortestPathData data) {
+		//initialization of the labels (see label.java)
+        Label[] labels = new Label[data.getGraph().size()];
+       // int destination = data.getDestination().getId();
+        for (Node node : data.getGraph().getNodes()) {
+    		labels[node.getId()]=new Label(node.getId());
+        }
+        return labels;
+	}
 
     @Override
     protected ShortestPathSolution doRun() {
         final ShortestPathData data = getInputData();
         ShortestPathSolution solution = null;
-        
         
         
         //**Initialization**
@@ -31,17 +41,18 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         
         //retrieve the graph and its size
         Graph graph = data.getGraph();
-        int nbNodes = graph.size();
+        //int nbNodes = graph.size();
         
         //initialization of the labels (see label.java)
-        Label[] labels = new Label[nbNodes];
-        for (Node node : graph.getNodes()) {
-        	labels[node.getId()]=new Label(node.getId());
-        }
+        //Label[] labels = new Label[nbNodes];
+        //for (Node node : graph.getNodes()) {
+        //	labels[node.getId()]=new Label(node.getId());
+        //}
         
      // Notify observers about the first event (origin processed).
         notifyOriginProcessed(data.getOrigin());
         
+        Label[] labels = InitLabels(data);
         //initialization of first node and new graph
         int originId = data.getOrigin().getId();
         labels[originId].SetCost(0);

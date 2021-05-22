@@ -1,6 +1,6 @@
 package org.insa.graphs.algorithm.shortestpath;
 
-import org.insa.graphs.model.Arc;
+//import org.insa.graphs.model.Arc;
 	
 public class LabelStar extends Label implements Comparable<Label> {
 			
@@ -8,7 +8,7 @@ public class LabelStar extends Label implements Comparable<Label> {
 	private double otherCost;
 	
 
-	public LabelStar(int currentNodeId, Boolean marked, double cost, Arc father ) {
+	public LabelStar(int currentNodeId) {
 		//super(currentNodeId, marked, cost, father);
 		super(currentNodeId);
 		this.otherCost = 0;
@@ -22,6 +22,10 @@ public class LabelStar extends Label implements Comparable<Label> {
 	public double getTotalCost(double cost) {
 		return this.getOtherCost() + this.getCost();
 			
+	}
+	
+	public int getFatherId() {
+		return this.getFather().getDestination().getId();
 	}
 	 
 	 //set functions

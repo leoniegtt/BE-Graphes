@@ -16,9 +16,9 @@ public class AStarAlgorithm extends DijkstraAlgorithm {
 	Label[] InitLabels(ShortestPathData data) {
 		//initialization of the labels (see label.java)
         LabelStar[] labels = new LabelStar[data.getGraph().size()];
-        int destination = data.getDestination().getId();
+        //int destination = data.getDestination().getId();
         for (Node node : data.getGraph().getNodes()) {
-//        	labels[node.getId()]=new LabelStar(node.getId(), false, Double.POSITIVE_INFINITY, destination);
+        	labels[node.getId()]=new LabelStar(node.getId() );
         }
         return labels;
 	}
