@@ -2,13 +2,15 @@ package org.insa.graphs.algorithm.shortestpath;
 
 
 import org.insa.graphs.model.Arc;
+import org.insa.graphs.model.Node;
+
 //import java.lang.Math;
 
 
 public class Label implements Comparable<Label>{
 
     // id of current node
-    private int currentNodeId;
+    private Node node;
 
     // true when the min cost of this node is known by the algorithm
     private Boolean marked;
@@ -16,20 +18,24 @@ public class Label implements Comparable<Label>{
     // cost of the shortest path from the origin to the Node
     private double cost;
     
-    //precedent node on shortest current path
+    //arc with precedent node on shortest current path
     private Arc father;
+    
+    //othercost for astar
+    private int otherCost;
 
 
-    public Label(int currentNodeId) {
-        this.currentNodeId = currentNodeId;
+    public Label(Node node) {
+        this.node= node;
         this.marked = false;
         this.cost = Double.POSITIVE_INFINITY;
         this.father = null ;
+        this.otherCost = 0;
     }
     
     //get methods for label class
     public int getCurrentNodeId() {
-    	return this.currentNodeId;
+    	return this.node.getId();
     }
     
     public Boolean isMarked() {
@@ -45,7 +51,7 @@ public class Label implements Comparable<Label>{
     }
     
     public double getOtherCost() {
-    	return 0;
+    	return this.otherCost;
     }
     
     //set methods for label class

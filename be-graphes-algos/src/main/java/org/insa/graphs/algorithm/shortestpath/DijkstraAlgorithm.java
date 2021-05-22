@@ -20,11 +20,11 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	
 
     Label[] InitLabels(ShortestPathData data) {
-		//initialization of the labels (see label.java)
+		//initialization of the labels
         Label[] labels = new Label[data.getGraph().size()];
-       // int destination = data.getDestination().getId();
+        
         for (Node node : data.getGraph().getNodes()) {
-    		labels[node.getId()]=new Label(node.getId());
+    		labels[node.getId()]=new Label(node);
         }
         return labels;
 	}
@@ -36,31 +36,26 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         
         
         //**Initialization**
-        //initialize binary heap
-        BinaryHeap<Label> heap = new BinaryHeap<Label>();
         
         //retrieve the graph and its size
-        Graph graph = data.getGraph();
-        //int nbNodes = graph.size();
+        Graph graph = data.getGraph();        
         
-        //initialization of the labels (see label.java)
-        //Label[] labels = new Label[nbNodes];
-        //for (Node node : graph.getNodes()) {
-        //	labels[node.getId()]=new Label(node.getId());
-        //}
-        
-     // Notify observers about the first event (origin processed).
+        // Notify observers about the first event (origin processed).
         notifyOriginProcessed(data.getOrigin());
         
+        //initialize array of labels
         Label[] labels = InitLabels(data);
-        //initialization of first node and new graph
         int originId = data.getOrigin().getId();
         labels[originId].SetCost(0);
         labels[originId].Mark(true);
+        
+        //initialize binary heap
+        BinaryHeap<Label> heap = new BinaryHeap<Label>();
         heap.insert(labels[originId]);
 
         
-        //**main part of the algorithm**
+        //**Main part of the algorithm**
+        
         //boolean representing if there exists unmarked nodes (stop the algorithm if not)
         boolean Unmarked = true;
         

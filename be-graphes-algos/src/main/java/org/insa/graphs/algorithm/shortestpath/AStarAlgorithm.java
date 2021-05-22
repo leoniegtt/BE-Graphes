@@ -9,17 +9,17 @@ public class AStarAlgorithm extends DijkstraAlgorithm {
     public AStarAlgorithm(ShortestPathData data) {
         super(data);
         
-
     }
     
     //create new array of labelstars
 	Label[] InitLabels(ShortestPathData data) {
 		//initialization of the labels (see label.java)
         LabelStar[] labels = new LabelStar[data.getGraph().size()];
-        //int destination = data.getDestination().getId();
+        Node destination = data.getDestination();
         for (Node node : data.getGraph().getNodes()) {
-        	labels[node.getId()]=new LabelStar(node.getId() );
+        	labels[node.getId()]=new LabelStar(node, destination );
         }
+        
         return labels;
 	}
     
