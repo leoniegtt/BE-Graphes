@@ -23,6 +23,8 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         final ShortestPathData data = getInputData();
         ShortestPathSolution solution = null;
         
+        
+        
         //**Initialization**
         //initialize binary heap
         BinaryHeap<Label> heap = new BinaryHeap<Label>();
