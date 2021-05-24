@@ -4,36 +4,37 @@ package org.insa.graphs.algorithm.shortestpath;
 import org.insa.graphs.model.Arc;
 import org.insa.graphs.model.Node;
 
-//import java.lang.Math;
-
 
 public class Label implements Comparable<Label>{
 
     // id of current node
-    private Node node;
+    protected Node node;
 
     // true when the min cost of this node is known by the algorithm
-    private Boolean marked;
+    protected Boolean marked;
 
     // cost of the shortest path from the origin to the Node
-    private double cost;
+    protected double cost;
     
     //arc with precedent node on shortest current path
-    private Arc father;
+    protected Arc father;
     
     //othercost for astar
-    private int otherCost;
+    //private double otherCost;
 
 
-    public Label(Node node) {
+    public Label(Node node, boolean marked, double cost, Arc father) {
         this.node= node;
         this.marked = false;
         this.cost = Double.POSITIVE_INFINITY;
         this.father = null ;
-        this.otherCost = 0;
     }
     
     //get methods for label class
+    public Node getNode() {
+    	return this.node;
+    }
+    
     public int getCurrentNodeId() {
     	return this.node.getId();
     }
@@ -48,10 +49,6 @@ public class Label implements Comparable<Label>{
     
     public Arc getFather() {
     	return this.father;
-    }
-    
-    public double getOtherCost() {
-    	return this.otherCost;
     }
     
     //set methods for label class
@@ -70,17 +67,17 @@ public class Label implements Comparable<Label>{
  
     //compare the cost of the current label with another label
     public int compareTo(Label other) {
-		 if (this.getTotalCost()==other.getTotalCost()) {
-			  return Double.compare(getOtherCost(), other.getOtherCost()) ;
-		  } else { 
+		 //if (this.getTotalCost()==other.getTotalCost()) {
+			//  return Double.compare(getOtherCost(), other.getOtherCost()) ;
+		  //} else { 
 			  return Double.compare(getTotalCost(), other.getTotalCost()); 
-		  }
-		 
+		 // }
     }
     
     //A* modification
     public double getTotalCost() {
-	   return this.getCost()+this.getOtherCost();
+	   //return this.getCost()+this.getOtherCost();
+    	return this.getCost();
    }
 }
  

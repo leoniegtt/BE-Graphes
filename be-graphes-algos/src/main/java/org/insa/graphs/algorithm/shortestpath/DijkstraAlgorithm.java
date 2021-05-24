@@ -24,7 +24,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         Label[] labels = new Label[data.getGraph().size()];
         
         for (Node node : data.getGraph().getNodes()) {
-    		labels[node.getId()]=new Label(node);
+    		labels[node.getId()]=new Label(node, false, Double.POSITIVE_INFINITY, null);
         }
         return labels;
 	}
