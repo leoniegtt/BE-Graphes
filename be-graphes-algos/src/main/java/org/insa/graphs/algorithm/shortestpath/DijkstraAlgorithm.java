@@ -21,12 +21,12 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 
     Label[] InitLabels(ShortestPathData data) {
 		//initialization of the labels
-        Label[] labels = new Label[data.getGraph().size()];
+        Label[] init = new Label[data.getGraph().size()];
         
         for (Node node : data.getGraph().getNodes()) {
-    		labels[node.getId()]=new Label(node, false, Double.POSITIVE_INFINITY, null);
+    		init[node.getId()]=new Label(node, false, Double.POSITIVE_INFINITY, null);
         }
-        return labels;
+        return init;
 	}
 
     @Override
@@ -76,7 +76,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
         	//System.out.println("cost of label " + labels[minId].getCost() +" = " + labels[minId].getCost());
         	
 			//to check nb successors coherent later
-        	//int count = 0;
+        	int count = 0;
         	
         	//find closest successor of said element
 	        for(Arc successor: minNode.getSuccessors() ) {
@@ -114,8 +114,8 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	        	}
 	        }
 	        //check that the nb of explored successors is coherent
-        	//int diff = minNode.getNumberOfSuccessors() - count ;
-        	//System.out.println("différence = " + diff);
+        	int diff = minNode.getNumberOfSuccessors() - count ;
+        	System.out.println("différence = " + diff);
 	        
 	        //check if the destination is marked(=arrived)
 	        Unmarked = false;

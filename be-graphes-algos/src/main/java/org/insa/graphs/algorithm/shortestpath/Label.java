@@ -20,7 +20,7 @@ public class Label implements Comparable<Label>{
     protected Arc father;
     
     //othercost for astar
-    //private double otherCost;
+   // private double otherCost;
 
 
     public Label(Node node, boolean marked, double cost, Arc father) {
@@ -28,6 +28,7 @@ public class Label implements Comparable<Label>{
         this.marked = false;
         this.cost = Double.POSITIVE_INFINITY;
         this.father = null ;
+      //  this.otherCost=0;
     }
     
     //get methods for label class
@@ -64,14 +65,26 @@ public class Label implements Comparable<Label>{
     	this.father = father;
     }
     
+	public double getOtherCost() {
+		return 0;
+	}
+    
  
     //compare the cost of the current label with another label
-    public int compareTo(Label other) {
+   // public int compareTo(Label other) {
 		 //if (this.getTotalCost()==other.getTotalCost()) {
 			//  return Double.compare(getOtherCost(), other.getOtherCost()) ;
 		  //} else { 
-			  return Double.compare(getTotalCost(), other.getTotalCost()); 
+//			  return Double.compare(getTotalCost(), other.getTotalCost()); 
 		 // }
+   // }
+    //compare the cost of the current label with another label
+    public int compareTo(Label other) {
+		 if (this.getTotalCost()==other.getTotalCost()) {
+			  return Double.compare(getOtherCost(), other.getOtherCost()) ;
+		  } else { 
+			  return Double.compare(getTotalCost(), other.getTotalCost()); 
+		  }
     }
     
     //A* modification
