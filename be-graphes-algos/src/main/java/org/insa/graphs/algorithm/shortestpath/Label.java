@@ -18,9 +18,6 @@ public class Label implements Comparable<Label>{
     
     //arc with precedent node on shortest current path
     protected Arc father;
-    
-    //othercost for astar
-   // private double otherCost;
 
 
     public Label(Node node, boolean marked, double cost, Arc father) {
@@ -28,7 +25,6 @@ public class Label implements Comparable<Label>{
         this.marked = false;
         this.cost = Double.POSITIVE_INFINITY;
         this.father = null ;
-      //  this.otherCost=0;
     }
     
     //get methods for label class
@@ -52,6 +48,14 @@ public class Label implements Comparable<Label>{
     	return this.father;
     }
     
+	public double getOtherCost() {
+		return 0;
+	}
+	
+    public double getTotalCost() {
+    	return this.getCost();
+   }
+    
     //set methods for label class
     public void Mark(Boolean marked) {
     	this.marked = marked;
@@ -64,20 +68,7 @@ public class Label implements Comparable<Label>{
     public void SetFather(Arc father) {
     	this.father = father;
     }
-    
-	public double getOtherCost() {
-		return 0;
-	}
-    
- 
-    //compare the cost of the current label with another label
-   // public int compareTo(Label other) {
-		 //if (this.getTotalCost()==other.getTotalCost()) {
-			//  return Double.compare(getOtherCost(), other.getOtherCost()) ;
-		  //} else { 
-//			  return Double.compare(getTotalCost(), other.getTotalCost()); 
-		 // }
-   // }
+
     //compare the cost of the current label with another label
     public int compareTo(Label other) {
 		 if (this.getTotalCost()==other.getTotalCost()) {
@@ -87,10 +78,5 @@ public class Label implements Comparable<Label>{
 		  }
     }
     
-    //A* modification
-    public double getTotalCost() {
-	   //return this.getCost()+this.getOtherCost();
-    	return this.getCost();
-   }
 }
  

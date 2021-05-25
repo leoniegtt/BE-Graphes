@@ -9,26 +9,24 @@ public class LabelStar extends Label implements Comparable<Label> {
 		
 	protected double otherCost;
 		
-	public LabelStar(Node node, boolean marked, double cost, Arc father, Node destination) {
+	public LabelStar(Node node, boolean marked, double cost, Arc father, Node destination, boolean length) {
 		super(node, marked, cost, father);
-		this.otherCost = destination.getPoint().distanceTo(node.getPoint());
+		if (length) {
+			this.otherCost = destination.getPoint().distanceTo(node.getPoint());
+		}
+		else {
+			this.otherCost = destination.getPoint().distanceTo(node.getPoint()) / 25d ;//convert to speed
+		}
 	}
 	
 	 public double getOtherCost() { 
 		 return otherCost;
 	 }
 	 
-	    public double getTotalCost() {
-	 	   return this.getCost()+this.getOtherCost();
-	     	//return this.getCost();
-	    }
+	 public double getTotalCost() {
+	    return this.getCost()+this.getOtherCost();
+	 }
 	
-	/*
-	 * //compare the cost of the current label with another label public int
-	 * compareTo(LabelStar other) { if (this.getTotalCost()==other.getTotalCost()) {
-	 * return Double.compare(getOtherCost(), other.getOtherCost()) ; } else { return
-	 * Double.compare(getTotalCost(), other.getTotalCost()); } }
-	 */
     
 }
  
