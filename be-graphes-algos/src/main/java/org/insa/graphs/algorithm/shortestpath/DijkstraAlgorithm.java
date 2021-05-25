@@ -110,12 +110,16 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 	        			y.SetFather(successor);
 	        			heap.insert(y);
 	        		}
+	        		
+	        		if (!heap.isValid()) {
+	        			System.out.println("Be careful : the heap is not valid");
+	        		}
 
 	        	}
 	        }
 	        //check that the nb of explored successors is coherent
-        	int diff = minNode.getNumberOfSuccessors() - count ;
-        	System.out.println("différence = " + diff);
+        	//int diff = minNode.getNumberOfSuccessors() - count ;
+        	//System.out.println("difference = " + diff);
 	        
 	        //check if the destination is marked(=arrived)
 	        Unmarked = false;

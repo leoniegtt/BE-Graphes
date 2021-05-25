@@ -142,7 +142,7 @@ public class BinaryHeap<E extends Comparable<E>> implements PriorityQueue<E> {
     		throw new ElementNotFoundException(x);
     	} else {
 	    	int index = this.array.indexOf(x) ;
-	    	//check that given index is accepatble for the heap
+	    	//check that given index is acceptable for the heap
 	    	if ( index == -1 || index>(this.currentSize-1)){
 		    	throw new ElementNotFoundException(x);
 	    	} else {
@@ -172,6 +172,35 @@ public class BinaryHeap<E extends Comparable<E>> implements PriorityQueue<E> {
         this.arraySet(0, lastItem);
         this.percolateDown(0);
         return minItem;
+    }
+    //    It should be a complete tree (i.e. all levels except last should be full).
+    public boolean isValid() {
+    	//initialize boolean
+    	boolean valid = false ;
+    	
+    	if (this.isEmpty()) {
+    		valid = true;
+    	}
+    	else {
+    		valid = true ; //we will check that it's not false rather than true
+    		
+	    	for (int i=0; i < this.currentSize; i++) {
+	    		int left = indexLeft(i);
+	    		int right = left +1 ;
+	    	    //Every node’s value should be lesser than or equal to its child node
+	    		if ( left < this.currentSize) {
+	    			if (left < i) {
+	    				valid = false;
+	    			}
+	    		}
+	    		else if (right <this.currentSize) {
+	    			if (right < i) {
+	    				valid = false;
+	    			}
+	    		}
+	    	}
+    	}
+    	return valid;
     }
 
     /**
