@@ -5,7 +5,6 @@ import org.insa.graphs.algorithm.shortestpath.Label;
 
 import org.insa.graphs.model.Node;
 
-import org.insa.graphs.algorithm.AbstractInputData;
 import org.insa.graphs.algorithm.AbstractInputData.Mode;
 
 

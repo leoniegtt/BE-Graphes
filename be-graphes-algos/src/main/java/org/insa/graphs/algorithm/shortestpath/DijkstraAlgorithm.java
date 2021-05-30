@@ -73,7 +73,7 @@ public class DijkstraAlgorithm extends ShortestPathAlgorithm {
 			notifyNodeMarked(minNode);
         	
 			//check that the cost of the marked labels is increasing
-        	System.out.println("cost of label " + labels[minId].getCost() +" = " + labels[minId].getCost());
+        	//System.out.println("cost of label = " + labels[minId].getCost());
         	
 			//to check nb successors coherent later
         	//int count = 0;

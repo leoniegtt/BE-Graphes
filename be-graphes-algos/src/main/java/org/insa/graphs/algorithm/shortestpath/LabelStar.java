@@ -15,7 +15,7 @@ public class LabelStar extends Label implements Comparable<Label> {
 			this.otherCost = destination.getPoint().distanceTo(node.getPoint());
 		}
 		else {
-			this.otherCost = destination.getPoint().distanceTo(node.getPoint()) / 25d ;//convert to speed
+			this.otherCost = destination.getPoint().distanceTo(node.getPoint()) / 50 ;//convert to speed
 		}
 	}
 	
